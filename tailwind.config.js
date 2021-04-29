@@ -6,7 +6,7 @@ module.exports = {
       keyframes: true
     }
   },
-  prefix: 'erb-',
+  prefix: 'nvn-', // use prefix to avoid duplication
   corePlugins: {
     preflight: false
   }
