@@ -1,0 +1,20 @@
+:root {
+  --ck-z-default: 100 !important;
+  --ck-z-modal: calc(var(--ck-z-default) * 99999) !important;
+}
+
+.ck {
+  @apply erb-rounded-md #{!important};
+
+  ul {
+    padding-left: 20px;
+    list-style: disc;
+  }
+
+  &-editor {
+    &__editable {
+      min-height: 60px;
+      max-height: 60vh;
+    }
+  }
+}

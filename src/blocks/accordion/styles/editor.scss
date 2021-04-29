@@ -1,0 +1,49 @@
+@import '../../../scss/components/button';
+
+.erb-accordion {
+  &__title {
+    font-size: 20px !important;
+    font-family: 'Noto Sans', Helvetica, sans-serif !important;
+    color: #262a2e !important;
+    font-weight: 400 !important;
+    margin: 0 !important;
+  }
+
+  &__editor {
+    &-add {
+      @apply erb-mb-5;
+    }
+
+    &-head {
+      @apply erb-flex erb-flex-row erb-justify-between erb-items-center;
+
+      button {
+        @apply erb-flex erb-justify-between erb-items-center erb-border-none;
+        @apply erb-bg-green-600 hover:erb-bg-green-700 erb-text-white erb-px-4 erb-py-2 erb-rounded-md;
+        @apply erb-transition-colors erb-ease-in-out;
+      }
+
+      svg {
+        @apply erb-text-white hover:erb-text-green-50 erb-ml-1;
+      }
+    }
+  }
+
+  &__modal {
+    @apply erb-mb-5;
+
+    &-title {
+      background: none;
+      border: none;
+      outline: none;
+    }
+
+    &-content {
+      @apply erb-mb-5;
+
+      > * {
+        @apply erb-my-1 #{!important};
+      }
+    }
+  }
+}

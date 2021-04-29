@@ -1,0 +1,8 @@
+.btn {
+  @apply erb-border-none;
+  @apply erb-px-5 erb-py-2 erb-rounded-md;
+
+  &-black {
+    @apply erb-bg-black erb-text-white;
+  }
+}

@@ -1,0 +1,19 @@
+/**
+ * Main files of editor styles
+ * this styles is only for editor
+ * didn't take affect on frontend
+ */
+
+/** Blocks */
+
+// Accordion
+@import '../blocks/accordion/styles/editor.scss';
+
+/**
+ * Global Editor Styles
+ */
+
+//  portal
+@import './components/portal.scss';
+// ckeditor
+@import './components//ckeditor.scss';

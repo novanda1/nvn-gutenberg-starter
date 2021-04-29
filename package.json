@@ -1,0 +1,50 @@
+{
+  "name": "NVN-Gutenberg-Starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development gulp",
+    "build": "NODE_ENV=production gulp build",
+    "lint": "eslint --fix ./"
+  },
+  "author": "Novanda Ahsan",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.13.13",
+    "autoprefixer": "^10.2.1",
+    "esbuild": "^0.11.6",
+    "eslint": "^7.24.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-esbuild": "^0.7.2",
+    "gulp-noop": "^1.0.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-watch": "^5.0.1",
+    "merge-stream": "^2.0.0",
+    "node-sass": "^4.14.1",
+    "postcss": "^8.2.4",
+    "stylelint": "^13.8.0",
+    "stylelint-config-standard": "^20.0.0",
+    "tailwindcss": "^2.0.2"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-balloon": "^27.0.0",
+    "@ckeditor/ckeditor5-react": "^3.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-flip-toolkit": "^7.0.13",
+    "react-icons": "^4.2.0"
+  }
+}

@@ -1,0 +1,10 @@
+/**
+ * Main file of styles.scss
+ * this file called both on Editor and Frontend
+ */
+
+// main styles of frontend and editor
+@import './main';
+
+// accordion block
+@import '../blocks/accordion/styles/style.scss';

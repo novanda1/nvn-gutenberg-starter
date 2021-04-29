@@ -1,0 +1,1 @@
+import './blocks/accordion/scripts/frontend';
