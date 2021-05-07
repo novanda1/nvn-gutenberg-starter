@@ -1,8 +1,8 @@
 .btn {
-  @apply erb-border-none;
-  @apply erb-px-5 erb-py-2 erb-rounded-md;
+  @apply nvn-border-none;
+  @apply nvn-px-5 nvn-py-2 nvn-rounded-md;
 
   &-black {
-    @apply erb-bg-black erb-text-white;
+    @apply nvn-bg-black nvn-text-white;
   }
 }

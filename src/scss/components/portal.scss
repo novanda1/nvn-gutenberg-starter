@@ -1,47 +1,47 @@
 .erb {
   &-modal {
-    @apply erb-items-center erb-justify-center;
-    @apply erb-opacity-0 erb-max-h-0 erb-overflow-hidden;
+    @apply nvn-items-center nvn-justify-center;
+    @apply nvn-opacity-0 nvn-max-h-0 nvn-overflow-hidden;
 
     &.active {
-      @apply erb-fixed erb-inset-0 erb-flex erb-opacity-100 erb-max-h-screen;
+      @apply nvn-fixed nvn-inset-0 nvn-flex nvn-opacity-100 nvn-max-h-screen;
 
       z-index: 999999;
 
-      .erb-modal__bg {
-        @apply erb-absolute erb-inset-0 erb-bg-opacity-60;
+      .nvn-modal__bg {
+        @apply nvn-absolute nvn-inset-0 nvn-bg-opacity-60;
       }
 
-      .erb-modal__content {
-        @apply erb-translate-y-0;
+      .nvn-modal__content {
+        @apply nvn-translate-y-0;
       }
     }
 
     &__bg {
-      @apply erb-cursor-pointer erb-bg-black  erb-bg-opacity-0 erb-backdrop-blur-sm erb-backdrop-filter;
+      @apply nvn-cursor-pointer nvn-bg-black  nvn-bg-opacity-0 nvn-backdrop-blur-sm nvn-backdrop-filter;
 
       transition: all 300ms ease;
     }
 
     &__content {
-      @apply erb-bg-white erb-rounded-md;
-      @apply erb-relative erb-p-6 erb-py-8;
-      @apply erb-flex erb-flex-col erb-gap-2 erb-items-center erb-justify-center;
-      @apply erb-transform erb--translate-y-4;
-      @apply erb-w-screen erb-max-w-xs;
-      @apply erb-transition-transform erb-ease-out;
+      @apply nvn-bg-white nvn-rounded-md;
+      @apply nvn-relative nvn-p-6 nvn-py-8;
+      @apply nvn-flex nvn-flex-col nvn-gap-2 nvn-items-center nvn-justify-center;
+      @apply nvn-transform nvn--translate-y-4;
+      @apply nvn-w-screen nvn-max-w-xs;
+      @apply nvn-transition-transform nvn-ease-out;
 
       > div {
-        @apply erb-w-full;
+        @apply nvn-w-full;
 
         > div {
-          @apply erb-flex erb-flex-col erb-gap-2;
-          @apply erb-mb-4;
+          @apply nvn-flex nvn-flex-col nvn-gap-2;
+          @apply nvn-mb-4;
         }
       }
 
       textarea {
-        @apply erb-py-2;
+        @apply nvn-py-2;
 
         padding-left: 0.6rem;
         padding-right: 0.6rem;
@@ -50,12 +50,12 @@
       }
 
       button {
-        @apply erb-cursor-pointer;
-        @apply erb-mt-2 erb-w-full;
+        @apply nvn-cursor-pointer;
+        @apply nvn-mt-2 nvn-w-full;
       }
 
       h3 {
-        @apply erb-mt-0;
+        @apply nvn-mt-0;
       }
     }
   }

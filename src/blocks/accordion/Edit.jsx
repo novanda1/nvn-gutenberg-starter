@@ -144,8 +144,8 @@ export default class Edit extends Component {
     return (
       <>
         <div className={this.props.className}>
-          <div className="erb-accordion__editor">
-            <div className="erb-accordion__editor-head">
+          <div className="nvn-accordion__editor">
+            <div className="nvn-accordion__editor-head">
               <h3>Accordion - ERB</h3>
               <div className="action">
                 <button
@@ -180,34 +180,34 @@ export default class Edit extends Component {
 
         <Portal active={this.state.portal.modal}>
           <div
-            className="erb-modal__bg"
+            className="nvn-modal__bg"
             onClick={() => this.setState({ portal: { modal: false } })}
           ></div>
-          <div className="erb-modal__content">
-            <div className="erb-accordion__modal open">
-              <h3 className="erb-text-center">
+          <div className="nvn-modal__content">
+            <div className="nvn-accordion__modal open">
+              <h3 className="nvn-text-center">
                 {this.state.editor.status == 'add' ? 'Add' : 'Edit'} Item
               </h3>
               <div>
                 <label>
-                  <span className="erb-px-2 erb-text-base erb-font-medium erb-mb-2">
+                  <span className="nvn-px-2 nvn-text-base nvn-font-medium nvn-mb-2">
                     Title
                   </span>
                   <PlainText
                     value={newItem.title}
                     onChange={this.handleChangeInputTitle}
                     placeholder="Accordion title..."
-                    className="erb-accordion__modal-title"
+                    className="nvn-accordion__modal-title"
                   />
                 </label>
                 <label>
-                  <span className="erb-px-2 erb-text-base erb-font-medium erb-mb-2">
+                  <span className="nvn-px-2 nvn-text-base nvn-font-medium nvn-mb-2">
                     Content
                   </span>
                   <CKEditor
                     editor={BallonEditor}
                     data={newItem.content}
-                    className="erb-rounded-l-md"
+                    className="nvn-rounded-l-md"
                     config={{
                       toolbar: [
                         'bold',
@@ -246,10 +246,10 @@ export default class Edit extends Component {
 
         <Portal active={this.state.portal.delete?.open}>
           <div
-            className="erb-modal__bg"
+            className="nvn-modal__bg"
             onClick={() => this.setState({ portal: { modal: false } })}
           ></div>
-          <div className="erb-modal__content">
+          <div className="nvn-modal__content">
             <h3>
               {
                 [...this.props.attributes.items].find(
@@ -259,9 +259,9 @@ export default class Edit extends Component {
             </h3>
             <h4 className="">Are you sure want to delete this item?</h4>
 
-            <div className="erb-flex erb-gap-2">
+            <div className="nvn-flex nvn-gap-2">
               <button
-                className="btn erb-bg-red-500 hover:erb-bg-red-600 erb-text-white"
+                className="btn nvn-bg-red-500 hover:nvn-bg-red-600 nvn-text-white"
                 onClick={async () => {
                   const items = [...this.props.attributes.items]
                   const index = items

@@ -2,7 +2,7 @@ import { Component } from 'react'
 import ReactDOM from 'react-dom'
 
 const portal = document.createElement('div')
-portal.setAttribute('id', 'erb-portal')
+portal.setAttribute('id', 'nvn-portal')
 document.body.appendChild(portal)
 
 class Portal extends Component {
@@ -10,7 +10,7 @@ class Portal extends Component {
     super(props)
 
     this.el = document.createElement('div')
-    this.el.classList.add('erb-modal')
+    this.el.classList.add('nvn-modal')
 
     this.props.active
       ? this.el.classList.add('active')

@@ -35,7 +35,7 @@ function erb_accordion_block_assets()
 { // phpcs:ignore
 	// Register block styles for both frontend + backend.
 	wp_register_style(
-		'erb-accordion-style-css', // Handle.
+		'nvn-accordion-style-css', // Handle.
 		plugins_url('dist/blocks.style.build.css', dirname(__FILE__)), // Block style CSS.
 		is_admin() ? array('wp-editor') : null, // Dependency to include the CSS after it.
 		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
@@ -43,7 +43,7 @@ function erb_accordion_block_assets()
 
 	// Register block editor script for backend.
 	wp_register_script(
-		'erb-accordion-block-js', // Handle.
+		'nvn-accordion-block-js', // Handle.
 		plugins_url('/dist/blocks.build.js', dirname(__FILE__)), // Block.build.js: We register the block here. Built with Webpack.
 		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'), // Dependencies, defined above.
 		null, // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
@@ -52,7 +52,7 @@ function erb_accordion_block_assets()
 
 	// Register block editor styles for backend.
 	wp_register_style(
-		'erb-accordion-block-editor-css', // Handle.
+		'nvn-accordion-block-editor-css', // Handle.
 		plugins_url('dist/blocks.editor.build.css', dirname(__FILE__)), // Block editor CSS.
 		array('wp-edit-blocks'), // Dependency to include the CSS after it.
 		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
@@ -60,7 +60,7 @@ function erb_accordion_block_assets()
 
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `cgbGlobal` object.
 	wp_localize_script(
-		'erb-accordion-block-js',
+		'nvn-accordion-block-js',
 		'cgbGlobal', // Array containing dynamic data for a JS Global.
 		[
 			'pluginDirPath' => plugin_dir_path(__DIR__),
@@ -81,14 +81,14 @@ function erb_accordion_block_assets()
 	 * @since 1.16.0
 	 */
 	register_block_type(
-		'erb-accordion/block-gutenberg',
+		'nvn-accordion/block-gutenberg',
 		array(
 			// Enqueue blocks.style.build.css on both frontend & backend.
-			'style'         => 'erb-accordion-style-css',
+			'style'         => 'nvn-accordion-style-css',
 			// Enqueue blocks.build.js in the editor only.
-			'editor_script' => 'erb-accordion-block-js',
+			'editor_script' => 'nvn-accordion-block-js',
 			// Enqueue blocks.editor.build.css in the editor only.
-			'editor_style'  => 'erb-accordion-block-editor-css',
+			'editor_style'  => 'nvn-accordion-block-editor-css',
 		)
 	);
 }
@@ -97,7 +97,7 @@ add_action('init', 'erb_accordion_block_assets');
 
 add_action('enqueue_block_assets', function () {
 	wp_enqueue_script(
-		'erb-accordion-block-frontend-js',
+		'nvn-accordion-block-frontend-js',
 		plugins_url('/dist/blocks.build.frontend.js', dirname(__FILE__)),
 		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'), 
 		null, 

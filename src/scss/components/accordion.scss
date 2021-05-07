@@ -1,25 +1,25 @@
-.erb-accordion {
-  @apply erb-relative;
+.nvn-accordion {
+  @apply nvn-relative;
 
   &__single {
-    @apply erb-bg-white;
+    @apply nvn-bg-white;
 
     box-shadow: 0 1px 18px rgba(0, 0, 0, 0.08);
 
     &:not(:last-child) {
-      @apply erb-mb-5;
+      @apply nvn-mb-5;
     }
 
     &-head {
-      @apply erb-flex erb-justify-between erb-p-10 erb-cursor-pointer erb-outline-none;
+      @apply nvn-flex nvn-justify-between nvn-p-10 nvn-cursor-pointer nvn-outline-none;
 
       &.active {
-        ~ .erb-accordion__content {
-          @apply erb-max-h-screen;
-          @apply erb-pb-16;
+        ~ .nvn-accordion__content {
+          @apply nvn-max-h-screen;
+          @apply nvn-pb-16;
         }
 
-        .erb-accordion__toggleIcon {
+        .nvn-accordion__toggleIcon {
           > div {
             &.plus {
               svg {
@@ -40,10 +40,10 @@
   }
 
   &__toggleIcon {
-    @apply erb-relative erb-w-5 erb-flex erb-items-center;
+    @apply nvn-relative nvn-w-5 nvn-flex nvn-items-center;
 
     > div {
-      @apply erb-absolute erb-right-0;
+      @apply nvn-absolute nvn-right-0;
 
       svg {
         transition: all 0.3s ease-in-out;
@@ -67,7 +67,7 @@
   }
 
   &__action {
-    @apply erb-flex;
+    @apply nvn-flex;
 
     button {
       background: none;
@@ -81,16 +81,16 @@
   }
 
   &__content {
-    @apply erb-overflow-hidden erb-max-h-0 erb-pl-10 erb-pr-16;
-    @apply erb-transition-all erb-ease-in-out;
+    @apply nvn-overflow-hidden nvn-max-h-0 nvn-pl-10 nvn-pr-16;
+    @apply nvn-transition-all nvn-ease-in-out;
 
     font-size: 15px;
 
     > * {
-      @apply erb-my-0 #{!important};
+      @apply nvn-my-0 #{!important};
 
       &:not(:last-child) {
-        @apply erb-mb-3 #{!important};
+        @apply nvn-mb-3 #{!important};
       }
     }
   }

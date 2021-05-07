@@ -1,6 +1,6 @@
-const accordion = document.querySelector('.erb-accordion')
+const accordion = document.querySelector('.nvn-accordion')
 if (accordion) {
-    const accordionSingle = [...accordion.querySelectorAll('.erb-accordion__single')]
+    const accordionSingle = [...accordion.querySelectorAll('.nvn-accordion__single')]
 
     let accordionState = {
         activeIndex: -1
@@ -20,8 +20,8 @@ if (accordion) {
         }
 
         accordionSingle.map((accordion => {
-            accordion.querySelector('.erb-accordion__single-head').classList.remove('active')
-            accordion.querySelector('.erb-accordion__single-head').setAttribute('aria-expanded', 'false')
+            accordion.querySelector('.nvn-accordion__single-head').classList.remove('active')
+            accordion.querySelector('.nvn-accordion__single-head').setAttribute('aria-expanded', 'false')
         }))
 
         accordionState.activeIndex = index
@@ -30,7 +30,7 @@ if (accordion) {
     }
 
     accordionSingle.map((accordion, index) => {
-        const title = accordion.querySelector('.erb-accordion__single-head')
+        const title = accordion.querySelector('.nvn-accordion__single-head')
         title.addEventListener('click', () => handleToggleAccordion(title, index))
         title.onkeypress = (event) => {
             switch (event.code) {

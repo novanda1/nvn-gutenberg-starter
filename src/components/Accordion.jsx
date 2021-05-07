@@ -79,26 +79,26 @@ class Accordion extends Component {
       isEditor ? 'accordion-toggler' : `accordion-toggler-${id}`
 
     return (
-      <div className="erb-accordion">
+      <div className="nvn-accordion">
         {isEditor ? (
           <Flipper flipKey={this.state.items.map((i) => i.id).join('')}>
             {this.state.items.map((item, index) => (
               <Flipped key={item.id} flipId={item.id}>
-                <div key={index} className="erb-accordion__single">
+                <div key={index} className="nvn-accordion__single">
                   <div
-                    className={`erb-accordion__single-head ${
+                    className={`nvn-accordion__single-head ${
                       this.state.active == index ? 'active' : ''
                     }`}
                     onClick={(e) => {
-                      if (e.target.className != 'erb-accordion__title') return
+                      if (e.target.className != 'nvn-accordion__title') return
                       this.toggleAccordion(index)
                     }}
                     id={accordionTogglerId(item.id)}
                     aria-expanded="false"
                   >
-                    <h3 className="erb-accordion__title">{item.title}</h3>
+                    <h3 className="nvn-accordion__title">{item.title}</h3>
                     {isEditor ? (
-                      <div className="erb-accordion__action">
+                      <div className="nvn-accordion__action">
                         <button
                           className="up"
                           onClick={() => this.onOrder('up', index)}
@@ -127,7 +127,7 @@ class Accordion extends Component {
                     ) : (
                       <>
                         <div
-                          className="erb-accordion__toggleIcon"
+                          className="nvn-accordion__toggleIcon"
                           tabIndex="1"
                           aria-controls={`accordion-panel` + item.id}
                         >
@@ -143,7 +143,7 @@ class Accordion extends Component {
                   </div>
                   <div
                     id={`accordion-panel` + item.id}
-                    className="erb-accordion__content"
+                    className="nvn-accordion__content"
                     aria-label={item.title}
                     dangerouslySetInnerHTML={{ __html: item.content }}
                   ></div>
@@ -154,21 +154,21 @@ class Accordion extends Component {
         ) : (
           <>
             {this.props.items.map((item, index) => (
-              <div key={index} className="erb-accordion__single">
+              <div key={index} className="nvn-accordion__single">
                 <div
-                  className={`erb-accordion__single-head ${
+                  className={`nvn-accordion__single-head ${
                     this.state.active == index ? 'active' : ''
                   }`}
                   onClick={(e) => {
-                    if (e.target.className != 'erb-accordion__title') return
+                    if (e.target.className != 'nvn-accordion__title') return
                     this.toggleAccordion(index)
                   }}
                   id={accordionTogglerId(item.id)}
                   aria-expanded="false"
                 >
-                  <h3 className="erb-accordion__title">{item.title}</h3>
+                  <h3 className="nvn-accordion__title">{item.title}</h3>
                   <div
-                    className="erb-accordion__toggleIcon"
+                    className="nvn-accordion__toggleIcon"
                     tabIndex="1"
                     aria-controls={`accordion-panel` + item.id}
                   >
@@ -182,7 +182,7 @@ class Accordion extends Component {
                 </div>
                 <div
                   id={`accordion-panel` + item.id}
-                  className="erb-accordion__content"
+                  className="nvn-accordion__content"
                   aria-label={item.title}
                   dangerouslySetInnerHTML={{ __html: item.content }}
                 ></div>
