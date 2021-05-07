@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 }
 
 
-$NAME = 'ERB';
+$NAME = 'nvn';
 
 /**
  * Enqueue Gutenberg block assets for both frontend + backend.
@@ -31,7 +31,7 @@ $NAME = 'ERB';
  * @uses {wp-editor} for WP editor styles.
  * @since 1.0.0
  */
-function erb_accordion_block_assets()
+function nvn_accordion_block_assets()
 { // phpcs:ignore
 	// Register block styles for both frontend + backend.
 	wp_register_style(
@@ -93,7 +93,7 @@ function erb_accordion_block_assets()
 	);
 }
 
-add_action('init', 'erb_accordion_block_assets');
+add_action('init', 'nvn_accordion_block_assets');
 
 add_action('enqueue_block_assets', function () {
 	wp_enqueue_script(

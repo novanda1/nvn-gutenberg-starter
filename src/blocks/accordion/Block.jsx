@@ -15,7 +15,7 @@ registerBlockType('erb/block-accordion', {
       default: []
     }
   },
-  keywords: [__('Accordion - ERB Block'), __('ERB Block'), __('accordion')],
+  keywords: [__('Accordion - nvn Block'), __('nvn Block'), __('accordion')],
 
   edit: Edit,
 
