@@ -5,42 +5,50 @@ const noop = require('gulp-noop')
 const merge = require('merge-stream')
 const babel = require('gulp-babel')
 const concat = require('gulp-concat')
-const createGulpEsbuild = require('gulp-esbuild')
+const { createGulpEsbuild } = require('gulp-esbuild')
 
 const sass = require('gulp-sass')
 const postcss = require('gulp-postcss')
 const cleanCSS = require('gulp-clean-css')
 const autoprefixer = require('gulp-autoprefixer')
+const rimraf = require('rimraf')
 
 sass.compiler = require('node-sass')
 
 const beScriptEsBuild = createGulpEsbuild({
-  minify: __prod__,
-  outfile: 'blocks.build.js',
-  bundle: true,
-  loader: {
-    '.js': 'jsx',
-    '.svg': 'text',
-  }
+  incremental: true,
+
 })
 
 const feScriptEsBuild = createGulpEsbuild({
-  minify: __prod__,
-  outfile: 'blocks.build.frontend.js',
-  bundle: true,
-  loader: {
-    '.js': 'jsx'
-  }
+  incremental: true,
 })
 
 const scripts = [
   {
     src: './src/index.js',
-    esbuild: beScriptEsBuild
+    esbuild: beScriptEsBuild,
+    option: {
+      minify: __prod__,
+      bundle: true,
+      loader: {
+        '.js': 'jsx',
+        '.svg': 'text',
+      },
+      outfile: 'blocks.build.js',
+    },
   },
   {
     src: './src/frontend.js',
-    esbuild: feScriptEsBuild
+    esbuild: feScriptEsBuild,
+    option: {
+      minify: __prod__,
+      bundle: true,
+      loader: {
+        '.js': 'jsx'
+      },
+      outfile: 'blocks.build.frontend.js',
+    },
   }
 ]
 
@@ -89,18 +97,24 @@ function _build() {
           ]
         ],
       }))
-      .pipe(script.esbuild)
+      .pipe(script.esbuild({
+        ...script.option
+      }))
       .pipe(dest('./dist'))
   )
 
   return merge(task)
 }
 
+function _clean(cb) {
+  rimraf('./dist/**/*.*', cb)
+}
+
 function watchTask(cb) {
-  watch('./src/**/*.(js|jsx)', _build)
   watch('./src/**/*.s[ca]ss', _styles)
+  watch('./src/**/*.(js|jsx)', _build)
   cb()
 }
 
-exports.default = series(_build, _styles, watchTask)
-exports.build = parallel(_build, _styles)
+exports.default = series(_clean, _build, _styles, watchTask)
+exports.build = series(_clean, parallel(_build, _styles))
