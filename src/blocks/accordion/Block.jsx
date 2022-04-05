@@ -5,8 +5,8 @@ import Save from './Save'
 const { __ } = wp.i18n
 const { registerBlockType } = wp.blocks
 
-registerBlockType('erb/block-accordion', {
-  title: __('Accordion - ERB Block'),
+registerBlockType('nvn/block-accordion', {
+  title: __('Accordion - nvn Block'),
   icon: <BsCardText />,
   category: 'common',
   attributes: {

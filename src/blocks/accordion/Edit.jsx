@@ -146,7 +146,7 @@ export default class Edit extends Component {
         <div className={this.props.className}>
           <div className="nvn-accordion__editor">
             <div className="nvn-accordion__editor-head">
-              <h3>Accordion - nvn</h3>
+              <h3>Accordion</h3>
               <div className="action">
                 <button
                   onClick={async () => {
